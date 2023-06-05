@@ -164,8 +164,12 @@ cython_debug/
 
 
 .env
-images/WikiArt/
-images/test_NST/
-notebooks/bg.png
-notebooks/04_GAN.ipynb
+
 docs/
+
+images/WikiArt/
+images/cam_pictures/
+
+notebooks/bg.png
+notebooks/drafts/
+
