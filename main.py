@@ -58,8 +58,8 @@ neg_avg = 0.070
 
 movement_name = nts.find_closest_movement(df_movement, pos_avg, neu_avg, neg_avg)
 movement_path = nts.get_random_movement_path(movement_name)
-print(movement_name)
-print(movement_path)
+#print(movement_name)
+#print(movement_path)
 movement_image = nts.load_img(movement_path)
 
 #print(content_image)

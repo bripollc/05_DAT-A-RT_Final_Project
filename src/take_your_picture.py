@@ -6,45 +6,64 @@ def capture_images_from_camera(output_directory):
     existing_images = os.listdir(output_directory)
     img_counter = len(existing_images)
 
+    # Load the Haar cascade for face detection
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+
     cam = cv2.VideoCapture(0)
 
+    capture_photo = False  # Flag to indicate when to capture a photo
+
     while True:
-        # capture the frame of the camera
+        # Capture the frame from the camera
         ret, frame = cam.read()
 
-        # verify if the frame is captured
+        # Verify if the frame is captured
         if not ret:
-            print('Error, it has not been possible to take a picture.')
+            print('Error al capturar el frame')
             break
 
-        # show frame in a window
-        cv2.imshow('Smile and take your best selfie!!!!', frame)
+        # Convert the frame to grayscale for face detection
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # wait for a key to be pressed
-        key = cv2.waitKey(1)
+        # Perform face detection
+        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
-        # press 'spacebar' to take a pic
-        if key == 32:
-            # name of pic
+        if capture_photo:
+            capture_photo = False  # Reset the capture_photo flag
+
+            # Save the picture without displaying the green rectangle
             img_name = f'selfie_{img_counter}.png'
             img_path = os.path.join(output_directory, img_name)
-
-            # save pic
             cv2.imwrite(img_path, frame)
-            print(f'Image saved in: {img_path}')
+            print(f'Imagen guardada en: {img_path}')
 
-            # counter increase
+            # Increase the counter
             img_counter += 1
 
-        # press 'q' to exit the loop
+        else:
+            # Draw rectangles around the detected faces
+            for (x, y, w, h) in faces:
+                cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+        # Show the frame in a window
+        cv2.imshow('Smile and take your best selfie!!!!', frame)
+
+        # Wait for a key press
+        key = cv2.waitKey(1)
+
+        # Press 'spacebar' to take a picture
+        if key == 32:
+            capture_photo = True  # Set the capture_photo flag to True
+
+        # Press 'q' to exit the loop
         if key == ord('q'):
             print('Saliendo del programa')
             break
 
-    # close camera
+    # Release the camera
     cam.release()
 
-    # close opencv windows
+    # Close OpenCV windows
     cv2.destroyAllWindows()
 
     return f'images/cam_pictures/selfie_{img_counter-1}.png'
