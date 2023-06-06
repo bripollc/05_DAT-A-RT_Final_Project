@@ -2,10 +2,13 @@ import src.cleaning as clean
 import src.take_your_picture as camera
 import src.neural_transfer_style as nts
 
-
 import os
 import pandas as pd
 
+import streamlit as st
+import streamlit.components.v1 as components
+
+"""
 #----------------------------------------------------------------------------
 # 0. CHARGE ORIGINAL DataFrame
     # The WikiArt Emotions Dataset
@@ -68,7 +71,7 @@ movement_image = nts.load_img(movement_path)
 stylized_movement_img = nts.stylize_image_movement(content_image, movement_image)
 ntl_movement_img = nts.tensor_to_image_movement(stylized_movement_img, content_path)
 #print(ntl_movement_img)
-"""
+
     # (2) ARTIST
 images_directory = "images/"
 
