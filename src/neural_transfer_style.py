@@ -98,7 +98,7 @@ def tensor_to_image_movement(tensor, content_path):
     path_to_save = f"images/cam_pictures/final_img_movement/final_{content_path.split('/')[-1]}"
     image.save(path_to_save)
     os.system(f"open {path_to_save}")
-    return "Done!"
+    return "Here you have your styled picture!"
 
 
 

@@ -161,7 +161,7 @@ with tab21:
 
 # Surrealism
 with tab22:
-    st.write ('Surrealism emerged in the early 20th century as a literary and artistic movement. It sought to explore the realm of the subconscious and unleash the power of the imagination. Surrealist artists, such as Salvador Dalí, René Magritte, and Max Ernst, created dreamlike and bizarre imagery, often combining unrelated elements to challenge the conventional understanding of reality. Surrealism aimed to access the hidden aspects of the human psyche and tap into the irrational and uncanny.')
+    st.write ('Surrealism emerged in the early 20th century as a literary and artistic movement. It sought to explore the realm of the subconscious and trigger the power of the imagination. Surrealist artists, such as Salvador Dalí, René Magritte, and Max Ernst, created dreamlike and bizarre imageges, often combining unrelated elements to challenge the conventional understanding of reality. Surrealism aimed to access the hidden aspects of the human psyche and tap into the irrational.')
     st.image('https://uploads5.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg')
     st.text('Salvador Dali: The Persistence of Memory - 1931')
 
