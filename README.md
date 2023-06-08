@@ -34,14 +34,14 @@ Neural transfer is a technique in deep learning and computer vision that blends 
  
 A convolutional neural network (CNN) is a type of machine learning algorithm used in image processing and visual recognition. It works as follows:
 
-![nts](images/readme/cnn.jpg)
+![cnn](images/readme/cnn.jpg)
 
-1. __Image input__: reception of an image as input composed of pixels, which represent the different colors and structures in the image. 
-2. __Convolution__: application of filters: small matrices on the image that calculate a weighted combination of the pixel values at each position to highlight particular features in the image. 
-3. __Feature maps__: generation of feature maps highlighting the regions where they were detected. 
-4. __Grouping__: pooling operation to the feature maps to reduce dimensionality while preserving key features. 
-5. __Fully connected layers__: use of fully connected layers to classify extracted features and make predictions. These layers take the input features and process them to generate the final network outputs. 
-6. __Learning and optimization__: Adjustment of filter weights and fully connected layers using machine learning techniques. The network is trained by gradually updating the weights to minimize the difference between the network predictions and the actual image labels. 
+1. __Image input__: reception of an image as input composed of pixels, which represent the different colors and structures in the image.
+2. __Convolution__: application of filters: small matrices on the image that calculate a weighted combination of the pixel values at each position to highlight particular features in the image.
+3. __Feature maps__: generation of feature maps highlighting the regions where they were detected.
+4. __Grouping__: pooling operation to the feature maps to reduce dimensionality while preserving key features.
+5. __Fully connected layers__: use of fully connected layers to classify extracted features and make predictions. These layers take the input features and process them to generate the final network outputs.
+6. __Learning and optimization__: Adjustment of filter weights and fully connected layers using machine learning techniques. The network is trained by gradually updating the weights to minimize the difference between the network predictions and the actual image labels.
 7. __Prediction and output__: prediction and classification of new images based on their training.
 
 
