@@ -12,6 +12,8 @@ import tempfile
 os.environ['TFHUB_MODEL_LOAD_FORMAT'] = 'COMPRESSED'
 #_____________________________________________________
 
+st.set_page_config(page_title = "DAT(A)RT", page_icon = ":sunglasses:")
+
 @st.cache(allow_output_mutation=True)
 def load_movement_dataframe():
     df = pd.read_csv("data/df_movement.csv")
@@ -133,9 +135,9 @@ def main():
             content_image = load_img(temp_img.name)
         
         st.header("#2 How do you feel today? 🫥")
-        pos_sentiment = st.slider('Positive 🙂', -1.0, 1.0, 0.0)
-        neu_sentiment = st.slider('Neutral 😶', -1.0, 1.0, 0.0)
-        neg_sentiment = st.slider('Negative 🙁', -1.0, 1.0, 0.0)
+        pos_sentiment = st.slider('Positive 🙂', 0.00, 0.50, 0.0)
+        neu_sentiment = st.slider('Neutral 😶', 0.00, 0.50, 0.0)
+        neg_sentiment = st.slider('Negative 🙁', 0.00, 0.50, 0.0)
 
         st.header("#3 Choose a movement or artist 👩🏻‍🎨")
         if st.button("Movement"):
@@ -156,7 +158,7 @@ def main():
             with col1:
                 original_image = PIL.Image.open(movement_path)
                 st.subheader("Movement Image")
-                st.image(original_image, caption="Selected Movement Image", use_column_width=True)
+                st.image(original_image, caption="Movement that best defines you today", use_column_width=True)
 
                 # Obtener el ID de la imagen seleccionada
                 image_id = movement_path.split('/')[-1].split('.')[0]
@@ -171,7 +173,7 @@ def main():
                 # Mostrar la información en la segunda columna
                 st.subheader("Information")
                 st.write(f"Artist: {artist}")
-                st.write(f"**Movement: {movement}**")
+                st.write(f"Movement: {movement}")
                 st.write(f"Title: {title}")
                 st.write(f"Year: {year}")
 
@@ -193,7 +195,7 @@ def main():
             # Mostrar la imagen generada en la primera columna
             with col1:
                 original_image = PIL.Image.open(artist_path)
-                st.subheader("Selected image")
+                st.subheader("Artist selected")
                 st.image(original_image, caption="Artist that best defines you today", use_column_width=True)
 
             with col2:

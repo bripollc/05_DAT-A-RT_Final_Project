@@ -174,3 +174,7 @@ notebooks/bg.png
 notebooks/drafts/
 
 main_draft.py
+
+
+video/
+.DS_Store

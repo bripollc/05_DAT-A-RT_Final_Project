@@ -3,28 +3,46 @@ import pandas as pd
 import os
 import streamlit.components.v1 as components
 
-
-st.title("Dat(A)rt")
-st.markdown("The project that...")
-
+st.set_page_config(page_title = "DAT(A)RT", page_icon = ":sunglasses:")
 
 st.header("Introduction")
-st.write(
-    "<div style='font-size:1.2rem'>"
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mi elit, varius vel dapibus eget, facilisis sit amet nisl. Mauris nec tristique eros. Etiam molestie mauris a urna gravida, et molestie justo dignissim. Praesent id quam id eros dignissim ultricies. Pellentesque rhoncus odio quis diam dictum mollis. Vivamus ac eleifend lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula lacinia nisl, ac placerat arcu ullamcorper at. Pellentesque eleifend, est nec dignissim porta, metus lacus malesuada risus, ut dapibus est libero non diam. Vivamus vestibulum ante id dictum luctus. Pellentesque at scelerisque nisi. Ut scelerisque erat eu sapien aliquam, bibendum rhoncus metus fermentum. Fusce feugiat egestas dui vel lobortis. <br><br> parrafo 2 <br>\
-    <div style='text-align: center; font-size: 1.5rem; font-weight: bold;'><br><br> Can technology be used to explore art by the way it makes us feel?</div>\
-    </div>",
+st.markdown(
+    """
+    <style>
+        .center {
+            text-align: left;
+            font-size: 1.0rem;
+        }
+        .italic {
+            text-align: center;
+            font-size: 1.0rem;
+            font-style: italic;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <p class='center'>Art has been a popular form of expression throughout history, capable of evoking emotions, stimulating thought and awakening emotional responses in those who appreciate it. Several studies have proved that art and creativity are attributes that have played a significant role in the evolution and natural selection of human beings.However, understanding how and why paintings evoke emotions is still a challenge.</p>
+    <p class='italic'> <span style='color: red;'> What are the emotions most commonly triggered by art? Why are some paintings more evocative than others? Why do we like certain paintings and not others?</p>
+    <p class='center'>In this context, emerges the Dat(A)rt project, which aims to explore the interaction between art and the viewer using technology as an ally. The main focus has been the application of image style transfer techniques, allowing to merge a classic artwork with a selfie and thus establishing a dialogue between both forms of expression.</span></p>
+    <p class='center'>In addition, an interactive tool has been developed to offer users the possibility to explore and discover artworks according to the emotions they experience. This tool revolutionizes the way we connect with artistic movements and artists by visually organizing a large database of artworks in terms of emotional parameters that describe their emotional content.</p>
+    <p class='center'>In conclusion, through the use of image style transfer techniques and the creation of an interactive tool, this project seeks to explore how paintings can influence our emotions and how these emotions can be transmitted and transformed in different contexts. This work offers new perspectives on the relationship between art, emotions and human experience, thus opening new possibilities for the enjoyment and appreciation of art in the digital world.</p>
+    """,
     unsafe_allow_html=True
 )
 
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(['WikiArt Emotions Dataset', 
-                                                    'Workflow',
-                                                    'Repository organization',
-                                                    'User interaction',
-                                                    'Results',
-                                                    'Conclusions',
-                                                    'Next steps'])
+
+
+
+
+
+tab1, tab2, tab3, tab4 = st.tabs(['WikiArt Emotions Dataset', 
+                                  'Workflow',
+                                  'Repository organization',
+                                  'Next steps'])
 with tab1:
 
     st.markdown('The data handled in this project is based on the ["WikiArt Emotions"](http://saifmohammad.com/WebPages/wikiartemotions.html) dataset. This dataset was compiled from WikiArt and annotated by crowdworkers for the research [paper](http://saifmohammad.com/WebDocs/lrec2018-paper-art-emotion.pdf) entitled *"WikiArt Emotions: An An Annotated Dataset of Emotions Evoked by Art"*, by Dr. Saif M. Mohammad and Dr. Svetlana Kiritchenko. As a result, 4,019 images were obtained representing 22 categories of four major styles: Renaissance, Post-Renaissance, Modern and Contemporary.')
@@ -51,24 +69,12 @@ with tab1:
 
 
 with tab2:
-    st.write('Aquí va una imagen Workflow')
-
-    #df = ('data/WikiArt-Emotions-Clean.csv')
-    #st.dataframe(df)
-
     current_path = os.path.dirname(os.path.abspath(__file__))
-    image_path = os.path.join(current_path, "../images/workflow/my_image.png")
-    st.image(image_path, caption="My Image")
+    image_path = os.path.join(current_path, "../images/workflow/workflow_white-06.png")
+    st.image(image_path, caption="Methodology of work")
 
 
 with tab3:
     st.write('Aqui va un listado sobre la organización del repo')
 with tab4:
     st.write('aqui va la explicacion de como el usuario interactua con la plataforma')
-with tab5:
-    st.write('aqui van imagenes de algunos resultados chulis')
-with tab6:
-    st.write('aqui van mis conclus')
-with tab7:
-    st.write('aqui mis next steps')
-

@@ -1,8 +1,9 @@
 import streamlit as st
 
+st.set_page_config(page_title = "DAT(A)RT", page_icon = ":sunglasses:")
 
 st.title("ART")
-st.markdown("The project that...")
+st.markdown("explore the different movements that are collected in the dataset:")
 
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14, tab15, tab16, tab17, tab18, tab19, tab20, tab21, tab22 = st.tabs(['Abstract Art', 
