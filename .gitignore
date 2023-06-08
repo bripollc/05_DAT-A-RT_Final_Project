@@ -171,12 +171,9 @@ images/WikiArt/
 images/cam_pictures/
 images/workflow
 images/readme/
-images/.DS_Store
 
 notebooks/bg.png
 notebooks/drafts/
 
 main_draft.py
 
-video/
-.DS_Store
