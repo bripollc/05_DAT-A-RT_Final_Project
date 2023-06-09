@@ -24,7 +24,7 @@ The data handled in this project is based on the "WikiArt Emotions" dataset. Thi
 
 ## Workflow
 
-![workflow](images/workflow/workflow_white.png)
+![workflow](images/readme/workflow_white.png)
 
 ## Neural Transfer Style
 
