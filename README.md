@@ -53,7 +53,7 @@ A convolutional neural network (CNN) is a type of machine learning algorithm use
 3. __Feature maps__: generation of feature maps highlighting the regions where they were detected.
 4. __Grouping__: pooling operation to the feature maps to reduce dimensionality while preserving key features.
 5. __Fully connected layers__: use of fully connected layers to classify extracted features and make predictions. These layers take the input features and process them to generate the final network outputs.
-6. __Learning and optimization__: Adjustment of filter weights and fully connected layers using machine learning techniques. The network is trained by gradually updating the weights to minimize the difference between the network predictions and the actual image labels.
+6. __Learning and optimization__: adjustment of filter weights and fully connected layers using machine learning techniques. The network is trained by gradually updating the weights to minimize the difference between the network predictions and the actual image labels.
 7. __Prediction and output__: prediction and classification of new images based on their training.
 
 
@@ -71,22 +71,31 @@ My model uses style neural transfer and convolutional neural networks (CNN) to f
 
 ## Organization
 <u>Notebooks</u>
- * __Image Extraction__: Extraction of all the images of the database into folders by artistic movement.
-* __Data Cleaning__: Transformation and cleaning of the data. 
-* __MySQL Import__: Import of the final .csv into MySQL to perform some queries.
-* __Take Your Picture__: Capture of a picture with the webcam by using OpenCV.
-* __Neural Transfer Style__: Implementation of style transfer between the extracted artworks and the picture captured by the camera by using a TensorFlow.
+ * __Image Extraction__: extraction of all the images of the database into folders by artistic movement.
+* __Data Cleaning__: transformation and cleaning of the data. 
+* __MySQL Import__: import of the final .csv into MySQL to perform some queries.
+* __Take Your Picture__:capture of a picture with the webcam by using OpenCV.
+* __Neural Transfer Style__: implementation of style transfer between the extracted artworks and the picture captured by the camera by using a TensorFlow.
 
 <u>Data</u>
- * __WiKiArt Emotions (folder)__: Original .csv files from WikiArt Emotion DataBase.
+ * __WiKiArt Emotions (folder)__: original .csv files from WikiArt Emotion DataBase.
  * __Palettes/Movement (folder)__: .csv files resulting from the color analysis.
  * __Artwiki_queries (file)__: .sql file with queries to explore the data.
-* __WikiArt Emotions Clean (file)__: Final .csv after applying EDA and ETL processes.
- * __df artist (file)__: Final .csv filtered with the average of positive, neutral and negative emotions by artist.
- * __df movement (file)__: Final .csv filtered with the average of positive, neutral and negative emotions by movement.
+* __WikiArt Emotions Clean (file)__: final .csv after applying EDA and ETL processes.
+ * __df artist (file)__: final .csv filtered with the average of positive, neutral and negative emotions by artist.
+ * __df movement (file)__: final .csv filtered with the average of positive, neutral and negative emotions by movement.
 
 <u>Images</u>
 * Color palettes by artistic movement resulting from the color analysis performed.
+
+<u>Pages</u>
+* Different pages generated to create the final interface using Streamlit.
+
+<u>src</u>
+* Modularized coding and encapsulated in functions without Streamlit.
+
+<u>video</u>
+* Video demostration of the final interface.
 
 ## Next steps
 
