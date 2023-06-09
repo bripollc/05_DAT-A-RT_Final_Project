@@ -17,10 +17,22 @@
 ## Project Description
 Art has been a popular form of expression throughout history, capable of evoking emotions, stimulating thought and awakening emotional responses in those who appreciate it. Several studies have proved that art and creativity are attributes that have played a significant role in the evolution and natural selection of human beings.However, understanding how and why paintings evoke emotions is still a challenge.
 
-In this context, emerges the Dat(A)rt project, which aims to explore the interaction between art and the viewer using technology as an ally. The main focus has been the application of image style transfer techniques, allowing to merge a classic artwork with a selfie and thus establishing a dialogue between both forms of expression.
+In this context, emerges the Dat(A)rt project, which aims to explore the interaction between art and the viewer using technology as an ally. The main focus has been the application of image style transfer technique, allowing to blend a classic artwork with a selfie and thus establishing a dialogue between both forms of expression.
 
 ## Database
-The data handled in this project is based on the "WikiArt Emotions" dataset. This dataset was compiled from WikiArt and annotated by crowdworkers for the research paper entitled "WikiArt Emotions: An An Annotated Dataset of Emotions Evoked by Art", by Dr. Saif M. Mohammad and Dr. Svetlana Kiritchenko. As a result, 4,019 images were obtained representing 22 categories of four major styles: Renaissance, Post-Renaissance, Modern and Contemporary.
+The data handled in this project is based on the "WikiArt Emotions" dataset. This dataset was compiled from WikiArt and annotated by crowdworkers for the research paper entitled "WikiArt Emotions: An Annotated Dataset of Emotions Evoked by Art", by Dr. Saif M. Mohammad and Dr. Svetlana Kiritchenko. As a result, 4,019 images were obtained representing 22 categories of four major styles: Renaissance, Post-Renaissance, Modern and Contemporary.
+
+Each artwork in the dataset was annotated by ten crowdworkers, who were presented with a set of 20 emotion words classified as "Positive Emotions", "Negative Emotions" and "Mix/Neutral". The crowdworkers were asked to make annotations based on:
+
+* __Scenario I__: presenting only the image of the work (without title)
+* __Scenario II__: presenting only the title of the artwork (no image)
+* __Scenario III__: presenting both the title and the image of the artwork
+
+In addition, each individual was asked to rate:
+
+* The artwork on a scale of -3 (strongly dislike) to 3 (strongly like)
+* Whether the image shows the face/body of a person/animal
+* Whether it is a painting or a different thing (e.g., a sculpture)
 
 ## Workflow
 
@@ -28,7 +40,7 @@ The data handled in this project is based on the "WikiArt Emotions" dataset. Thi
 
 ## Neural Transfer Style
 
-Neural transfer is a technique in deep learning and computer vision that blends a content image and a style reference image to generate a new output image that combines features of both. The content image provides high-level information and structure, while the style image captures textures, colors and patterns. These features are extracted using a convolutional neural network to achieve that fusion.
+Neural transfer is a technique in deep learning and computer vision that blends a content image and a style reference image to generate a new output image that combines features of both. The content image provides high-level information and structure, while the style image captures textures, colors and patterns. These features are extracted using a convolutional neural network to achieve a new image.
 
 ![nts](images/readme/nts.jpg)
  
@@ -46,7 +58,7 @@ A convolutional neural network (CNN) is a type of machine learning algorithm use
 
 
 ## My Model
-My model uses style neural transfer and convolutional neural networks (CNNs) to fusion a content image (selfie) and a style reference image (chosen from the dataset based on user sentiments) to generate a new image that combines features from both. In my implementation, I use the open source Tensorflow library, together with the Tensorflow Hub extension, which facilitates the use of pre-trained machine learning models. To improve performance and model loading time, I set an environment variable to load the models in compressed format. Specifically, I use the Google Magenta arbitrary image styling model, which specializes in image styling transfer. 
+My model uses style neural transfer and convolutional neural networks (CNN) to fusion a content image (selfie) and a style reference image (chosen from the dataset based on user sentiments) to generate a new image that combines features from both. In my implementation, I use the open source Tensorflow library, together with the Tensorflow Hub extension, which facilitates the use of pre-trained machine learning models. To improve performance and model loading time, I set an environment variable to load the models in compressed format to allow faster data processing. I also use Google Magenta arbitrary image styling model, which specializes in image styling transfer. 
 
 * __Tensorflow__: open source library used for machine learning tasks and neural network model development.
 * __Tensorflow Hub__: Tensorflow extension that provides pre-trained machine learning models.
@@ -55,14 +67,14 @@ My model uses style neural transfer and convolutional neural networks (CNNs) to 
 
 ## Results
 
-(video)
+(video folder)
 
 ## Organization
 <u>Notebooks</u>
  * __Image Extraction__: Extraction of all the images of the database into folders by artistic movement.
 * __Data Cleaning__: Transformation and cleaning of the data. 
 * __MySQL Import__: Import of the final .csv into MySQL to perform some queries.
-* __Take Your Picture__: Open the camera and take a picture with OpenCV.
+* __Take Your Picture__: Capture of a picture with the webcam by using OpenCV.
 * __Neural Transfer Style__: Implementation of style transfer between the extracted artworks and the picture captured by the camera by using a TensorFlow.
 
 <u>Data</u>
@@ -72,9 +84,6 @@ My model uses style neural transfer and convolutional neural networks (CNNs) to 
 * __WikiArt Emotions Clean (file)__: Final .csv after applying EDA and ETL processes.
  * __df artist (file)__: Final .csv filtered with the average of positive, neutral and negative emotions by artist.
  * __df movement (file)__: Final .csv filtered with the average of positive, neutral and negative emotions by movement.
-
-<u>Figures</u>
-* Plots resulting from the data analysis are included.
 
 <u>Images</u>
 * Color palettes by artistic movement resulting from the color analysis performed.
