@@ -49,7 +49,7 @@ A convolutional neural network (CNN) is a type of machine learning algorithm use
 ![cnn](images/readme/cnn.jpg)
 
 1. __Image input__: reception of an image as input composed of pixels, which represent the different colors and structures in the image.
-2. __Convolution__: application of filters: small matrices on the image that calculate a weighted combination of the pixel values at each position to highlight particular features in the image.
+2. __Convolution__: application of filters, small matrices on the image that calculate a weighted combination of the pixel values at each position to highlight particular features in the image.
 3. __Feature maps__: generation of feature maps highlighting the regions where they were detected.
 4. __Grouping__: pooling operation to the feature maps to reduce dimensionality while preserving key features.
 5. __Fully connected layers__: use of fully connected layers to classify extracted features and make predictions. These layers take the input features and process them to generate the final network outputs.
